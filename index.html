@@ -156,21 +156,20 @@
             <h2>Contact</h2>
             <p>Me contacter.</p>
             
-                <form action="https://formspree.io/f/mldnlqke" method="post" enctype="text/plain">
-                    <label for="name">Nom :</label>
-                    <input type="text" id="name" name="name" required>
-            
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}" title="Entrez un email valide (ex: exemple@domaine.com)">
+               <form action="https://formspree.io/f/mldnlqke" method="POST">
+                  <label for="name">Nom :</label>
+                  <input type="text" id="name" name="name" required>
 
-            
-                    <label for="message">Message :</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-            
-                    <button type="submit">Envoyer</button>
-                </form>
-          
-            
+                  <label for="email">Email :</label>
+                  <input type="email" id="email" name="email" required>
+
+                  <label for="message">Message :</label>
+                  <textarea id="message" name="message" required></textarea>
+
+                  <button type="submit">Envoyer</button>
+              </form>
+
+        
         </section>
         
     </main> 
