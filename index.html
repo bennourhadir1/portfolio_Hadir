@@ -156,18 +156,53 @@
             <h2>Contact</h2>
             <p>Me contacter.</p>
             
-               <form action="https://formspree.io/f/mldnlqke" method="POST">
-                  <label for="name">Nom :</label>
-                  <input type="text" id="name" name="name" required>
+              <form id="contactForm">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
 
-                  <label for="email">Email :</label>
-                  <input type="email" id="email" name="email" required>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
 
-                  <label for="message">Message :</label>
-                  <textarea id="message" name="message" required></textarea>
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" required></textarea>
 
-                  <button type="submit">Envoyer</button>
+                <button type="submit">Envoyer</button>
               </form>
+         </section>
+
+<script>
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();  // bloque l'envoi classique
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('https://formspree.io/f/mldnlqke', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Message envoyé avec succès !");
+        form.reset();
+      } else {
+        alert("Erreur : " + (result.error || "Impossible d'envoyer le message"));
+      }
+    } catch (error) {
+      alert("Erreur réseau ou serveur.");
+      console.error(error);
+    }
+  });
+</script>
+
 
         
         </section>
