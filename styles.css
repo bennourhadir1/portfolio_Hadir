@@ -1,0 +1,418 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0e9e9d2;
+    text-align: center;
+    padding: 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+header {
+    
+    background-color: #d5d5dcd2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(2, 53, 120, 0.1);
+    
+}
+.menu {
+    display: flex;
+    gap: 15px;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu a, .menu button {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.menu button:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: none; /* ou supprime cette ligne */
+}
+
+.menu button:hover i {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+/* Tooltip */
+.tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: black;
+    color: white;
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+}
+/* Mode sombre */
+.dark-mode {
+    background: #121212;
+    color: white;
+}
+/* NAVIGATION */
+body.dark-mode nav {
+    background-color: #1e1e1e;
+}
+.dark-mode .menu {
+    background: #040404;
+}
+.dark-mode .menu i {
+    color: white !important;
+}
+.dark-mode .menu a, .dark-mode .menu button {
+    color: rgb(18, 17, 17);
+}
+h1 {
+    color: #2f3655;
+}
+h2 {
+    color: #2f3655;
+}
+
+p {
+    color: #666;
+}
+#dark-mode-toggle i {
+    font-size: 24px;
+    color: #2f3655; /* Couleur de l'icône */
+    transition: color 0.3s ease;
+}
+
+body.dark-mode #dark-mode-toggle i {
+    color: #000000; /* Couleur de l'icône en mode sombre */
+}
+.profile-pic {
+    width: 200px; /* Ajuste la taille de l’image */
+    height: 200px;
+    border-radius: 50%; /* Rend l’image ronde */
+    border: 3px solid #2f3655; /* Ajoute une bordure */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre */
+    object-fit: cover; /* Coupe l’image pour qu’elle s’adapte bien */
+}
+nav {
+    background-color: #2f3655;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ded3d3d2;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+    transform: scale(1.1); /* Agrandit le lien à 110% */
+    transition: transform 0.3s ease; /* Transition douce pour l'agrandissement */
+}
+section {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+section:target {
+    opacity: 1;
+}
+
+.profile-pic {
+    transition: transform 0.3s ease; /* Transition douce */
+}
+
+.profile-pic:hover {
+    transform: scale(1.1); /* Légère augmentation de la taille */
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    color:#650505;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 10px;
+    background-color: #b7b7b7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+
+}
+input:focus, textarea:focus {
+    border-color: #b7b7b7; /* Change la couleur de la bordure quand le champ est sélectionné */
+    box-shadow: 0 0 5px rgba(51, 51, 51, 0.5); /* Ajoute un effet d'ombre autour du champ */
+    transition: all 0.3s ease; /* Transition douce pour l'effet */
+}
+button {
+    padding: 10px;
+    background-color: #650505;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Animation douce */
+}
+
+button:hover {
+    transform: scale(1.05); /* Agrandit légèrement le bouton */
+    background-color: #555; /* Change la couleur de fond */
+     
+}
+#contact {
+    padding: 50px 0;
+    opacity: 1; /* Initialement invisible */
+    transition: opacity 1s ease-in-out; /* Animation de fondu douce */
+
+}
+
+#contact:target {
+    opacity: 1; /* Deviens visible lorsque la section est ciblée */
+}
+#projects {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project img {
+    max-width: 100%;
+    width:350px;
+    height: 180px;
+    border-radius: 8px;
+}
+
+.project h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color:#650505 ;
+}
+
+.project p {
+    font-size: 1em;
+    color: #555;
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #470101;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.project a:hover {
+    background-color: #555;
+    transform: scale(1.05); /* Agrandir légèrement le projet au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+    transition: all 0.3s ease-in-out; /* Transition douce pour l'effet */
+    color: white; /* Changer la couleur du texte */
+    text-decoration: underline; /* Souligner le texte */
+}
+/* Pour les écrans moyens (tablettes, par exemple) */
+@media (max-width: 768px) {
+    .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px; /* Limiter la largeur pour de grands écrans */
+            margin: 0 auto; /* Centrer le conteneur */
+        }
+        
+
+    .project {
+        width: 90%; /* Les projets occupent presque toute la largeur */
+    }
+}
+
+/* Pour les petits écrans (smartphones) */
+@media (max-width: 480px) {
+    .project {
+        width: 100%; /* Les projets occupent toute la largeur de l'écran */
+    }
+}
+
+#skills {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+}
+
+.skill {
+    width: 250px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.skill h3{
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color:#650505 ;}
+#education {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.education-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.education-item {
+    width: 80%;
+    max-width: 500px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.education-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.6em;
+    color:#650505 ;
+}
+
+.education-item p {
+    color: #555;
+}
+#experience {
+    padding: 20px ;
+    text-align: center;
+}
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience-item {
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.experience-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.6em;
+    color:#650505 ;
+}
+
+.experience-item p {
+    color: #555;
+}
+
+/* === Certifications et Diplômes === */
+.cert-item, .diploma-item {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.cert-item img, .diploma-item img {
+    width: 100%;
+    max-width: 180px; /* Ajuste la taille */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+}
